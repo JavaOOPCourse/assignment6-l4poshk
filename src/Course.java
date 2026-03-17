@@ -9,15 +9,17 @@ public class Course {
         return name;
     }
 
-    // TODO: Task 4 — Обязательно переопредели (иначе HashMap не будет работать!)
     @Override
     public boolean equals(Object o) {
-        return false; // заглушка
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course other = (Course) o;
+        return this.name.equals(other.name);
     }
 
     @Override
     public int hashCode() {
-        return 0; // заглушка
+        return name.hashCode();
     }
 
     @Override
